@@ -1,0 +1,34 @@
+i) Select instance/image you want to use
+
+ii) Once instance is running (2/2 checks complete), open up your terminal and enter:
+ssh -i "Directory/to/Pem/Key" ec2-user@(ec2 public-dns)
+
+iii)Update all the files/drivers of the server
+sudo yum update
+
+iv)Install Python
+sudo yum install python
+
+v)Setting up python VE
+$ python3 -m venv (folder name)
+
+vi)Activate VE
+source (folder name)/bin/activate
+
+vii)Download Python Libraries
+pip install pandas numpy matplotlib seaborn scikit-learn statsmodels jupyter imblearn statistics
+
+viii)Save VENV Settings
+pip freeze> requirements.txt
+
+Uploading files to AWS Server
+scp -i "directory/to/pem/file" "directory/to/file/you/want/to/upload" ec2-username@(ec2-public-dns):~/(folder name)
+
+Check if files have been succesfully uploaded to the server
+cd (folder name) - sets command directory to the folder
+ls - list all files in that directory
+
+Downloading files from AWS Server
+scp -i "directory/to/pem/file" ec2-user@(ec2-public-dns):~/(folder name)/(name of file you want to download.filetype) "directory/you/want/the/file/to/be/save/too"
+
+https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6(for images if required)
